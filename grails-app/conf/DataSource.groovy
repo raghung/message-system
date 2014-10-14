@@ -30,7 +30,7 @@ environments {
             //url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
 			url = "jdbc:mysql://localhost:3306/message_system"
 			username = "root"
-			password = "mko09ijn"
+			password = "root"
         }
     }
     production {
@@ -39,7 +39,7 @@ environments {
             //url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
 			url = "jdbc:mysql://localhost:3306/message_system"
 			username = "root"
-			password = "mko09ijn"
+			password = "root"
             
         }
     }
