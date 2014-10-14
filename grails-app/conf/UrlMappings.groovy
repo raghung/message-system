@@ -7,6 +7,7 @@ class UrlMappings {
             }
         }
 
+		"/api/v1/$action?/$id?(.$format)?"(controller: "restResource")
         "/"(view:"/index")
         "500"(view:'/error')
 	}

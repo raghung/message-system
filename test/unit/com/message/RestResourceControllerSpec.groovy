@@ -1,4 +1,4 @@
-package com.security
+package com.message
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(SecureController)
-class SecureControllerSpec extends Specification {
+@TestFor(RestResourceController)
+class RestResourceControllerSpec extends Specification {
 
     def setup() {
     }

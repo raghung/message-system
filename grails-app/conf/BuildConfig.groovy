@@ -68,6 +68,11 @@ grails.project.dependency.resolution = {
 		compile ":spring-security-rest:latest.release", {
 			excludes: 'spring-security-core'
 		}
+		
+		//compile ":mail:1.0.6"
+		//compile ":jquery-ui:1.10.3"
+		//compile ":famfamfam:1.0.1"
+		//compile ":spring-security-ui:1.0-RC2"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.5.4" // or ":hibernate:3.6.10.16"
