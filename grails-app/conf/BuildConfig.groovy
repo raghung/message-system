@@ -21,6 +21,7 @@ grails.project.fork = [
     console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
 ]
 
+//grails.plugin.location.'lookup' = '../lookup'
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -63,6 +64,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.7'
         compile ":asset-pipeline:1.8.11"
+		//compile ":mongodb:3.0.2"
 		
 		compile ":spring-security-core:2.0-RC4"
 		compile ":spring-security-rest:latest.release", {
