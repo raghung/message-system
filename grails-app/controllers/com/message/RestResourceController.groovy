@@ -15,7 +15,8 @@ class RestResourceController extends RestfulController {
 							 getOrganizations:'GET', getSecQuestions:'GET',
 							 validateUsername:'GET',
 							 validateUser:'POST', registerUser:'POST',
-							 getPersonalImage:'GET']
+							 getPersonalImage:'GET',
+							 needVerification:'GET']
 	
 	def springSecurityService
 	
@@ -135,6 +136,12 @@ class RestResourceController extends RestfulController {
 		def var = JSON.parse(request)
 		
 		def missing = []
+		if (!var.username) {
+			missing << "username"
+		}
+		if (!var.password) {
+			missing << "password"
+		}
 		if (!var.firstname) {
 			missing << "firstname"
 		}
@@ -159,8 +166,8 @@ class RestResourceController extends RestfulController {
 		
 		def resMap = ""
 		if (missing.size() == 0) {
-			def user = new User(username: params.username, 
-				                password: params.password).save(flush: true, failOnError: true)
+			def user = new User(username: var.username, 
+				                password: var.password).save(flush: true, failOnError: true)
 			UserRole.create(user, Role.findByAuthority("ROLE_DOCTOR"), true)
 			
 			resMap = ["heading":"Select your Graduation place",
@@ -199,6 +206,14 @@ class RestResourceController extends RestfulController {
 		def currentUser = springSecurityService.currentUser
 		
 		def resMap = ["result": currentUser.personalImage]
+		render resMap as JSON
+		
+	}
+	
+	@Secured('permitAll')
+	def needVerification() {
+				
+		def resMap = ["result": params.username + " will be verified"]
 		render resMap as JSON
 		
 	}

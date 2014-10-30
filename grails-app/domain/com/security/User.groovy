@@ -8,6 +8,8 @@ class User {
 	String password
 	String personalImage = ""
 	boolean enabled = true
+	boolean activated = true
+	boolean validated = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
